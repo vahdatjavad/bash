@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Bash Introduction"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+  sidebar: 
+   style: docked
+   search: true
+   colapse-level: 2 
+   contents:
+     - text: "Getting Started"
+       href: docs/getting-started.qmd
+     - section: "section 1"
+       contents:
+        - href: docs/session1.qmd
+          text: "title1"
+        - href: docs/variables.qmd
+          text: "title2"
+    
+
+
+format:
+  html:
+    toc: true
+    code-fold: show
+    code-copy: true
+    number-sections: true
+
+execute:
+  freeze: auto   # cache results until code changes
+  echo: true
+  warning: false
+  message: false

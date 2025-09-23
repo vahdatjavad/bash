@@ -1,0 +1,10 @@
+---
+title: "Bash Introduction"
+---
+
+In This Website you will find a series of tutorials and examples to learn Bash scripting. by default. It is also available on macOS and Windows (via WSL or Git Bash).
+Bash is a powerful tool for automating tasks, managing system operations, and creating scripts to streamline workflows.
+
+Here is the list of tutorials available:
+
+- [Getting Started with Bash](docs/getting-started.qmd)
