@@ -1,11 +1,91 @@
 quarto generate project website:
 
-```Bash
+``` bash
 quarto create project Website
 ```
+
 initialize git repository:
 
-```Bash
+``` bash
 git init
 ```
 
+then config `_quarto.yml` to set up the website.
+
+We can have `renv` to manage R packages:
+
+``` bash
+renv::init()
+```
+
+Then add `renv` to `.gitignore`:
+
+``` bash
+echo "renv/library" >> .gitignore
+echo "renv/staging" >> .gitignore
+echo "renv/python" >> .gitignore
+echo "renv/settings.dcf" >> .gitignore
+echo "renv/activate.R" >> .gitignore
+echo "renv.lock" >> .gitignore
+echo ".Rprofile" >> .gitignore
+echo ".Rhistory" >> .gitignore
+echo ".RData" >> .gitignore
+echo ".Rproj.user" >> .gitignore
+echo ".Rproj" >> .gitignore
+echo ".DS_Store" >> .gitignore
+```
+
+Then commit the changes:
+
+``` bash
+git add .
+git commit -m "Initial commit"
+```
+
+If i finished and wanted to update `renv`:
+
+``` r
+renv::snapshot()
+renv::status()
+```
+
+I i downloaded new repo and wanted to restore `renv`:
+
+``` r
+renv::restore()
+renv::status()
+```
+
+Go to GitHub to create a new repository, then copy the commands to push local repo to GitHub.
+
+``` bash
+git remote add origin https://github.com/vahdatjavad/bash.git   
+git branch -M main
+git push -u origin main
+```
+
+Then I can use GitHub to host the website.
+
+``` bash
+git remote add origin
+git branch -M main
+git push -u origin main
+```
+
+Then I can go to GitHub repository setting to enable GitHub pages.
+
+for rendering the website:
+
+``` bash
+quarto render --output-dir docs
+```
+
+Then commit and push to GitHub:
+
+``` bash
+git add .
+git commit -m "Render website"
+git push
+```
+
+Then I can go to GitHub repository setting to enable GitHub pages.

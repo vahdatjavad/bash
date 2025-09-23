@@ -7,3 +7,34 @@ This is a simple example of a Bash script that prints "Hello, World!" to the con
 ``` bash
 echo "Hello, World!"
 ```
+
+To run this script, you can save it to a file named `hello.sh`, give it execute permissions using `chmod +x hello.sh`, and then execute it with `./hello.sh`.
+
+create the file `hello.sh` and add the following content:
+
+``` bash
+touch ./files/hello.sh
+```
+
+``` bash
+nano ./files/hello.sh
+#!/bin/bash
+echo "Hello, World!"
+```
+
+for saving in nano, press `CTRL + X`, then `Y`, and then `ENTER`.
+
+Make the script executable:
+
+``` bash
+chmod +x ./files/hello.sh
+```
+
+Run the script:
+
+``` bash
+./files/hello.sh
+# Output: Hello, World!
+```
+
+This will output "Hello, World!" to the console.

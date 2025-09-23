@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "00-start.html",
+    "href": "00-start.html",
+    "title": "Bash Introduction",
     "section": "",
-    "text": "I am Javad Vahdat Atashgah and this is my linked-in profile:\n\n\n\nLinkedIn"
+    "text": "quarto generate project website:\nquarto create project Website\ninitialize git repository:\ngit init\nthen config _quarto.yml to set up the website.\nWe can have renv to manage R packages:\nrenv::init()\nThen add renv to .gitignore:\necho \"renv/library\" &gt;&gt; .gitignore\necho \"renv/staging\" &gt;&gt; .gitignore\necho \"renv/python\" &gt;&gt; .gitignore\necho \"renv/settings.dcf\" &gt;&gt; .gitignore\necho \"renv/activate.R\" &gt;&gt; .gitignore\necho \"renv.lock\" &gt;&gt; .gitignore\necho \".Rprofile\" &gt;&gt; .gitignore\necho \".Rhistory\" &gt;&gt; .gitignore\necho \".RData\" &gt;&gt; .gitignore\necho \".Rproj.user\" &gt;&gt; .gitignore\necho \".Rproj\" &gt;&gt; .gitignore\necho \".DS_Store\" &gt;&gt; .gitignore\nThen commit the changes:\ngit add .\ngit commit -m \"Initial commit\"\nIf i finished and wanted to update renv:\nrenv::snapshot()\nrenv::status()\nI i downloaded new repo and wanted to restore renv:\nrenv::restore()\nrenv::status()\nGo to GitHub to create a new repository, then copy the commands to push local repo to GitHub.\ngit remote add origin https://github.com/vahdatjavad/bash.git   \ngit branch -M main\ngit push -u origin main\nThen I can use GitHub to host the website.\ngit remote add origin\ngit branch -M main\ngit push -u origin main\nThen I can go to GitHub repository setting to enable GitHub pages.\nfor rendering the website:\nquarto render --output-dir docs\nThen commit and push to GitHub:\ngit add .\ngit commit -m \"Render website\"\ngit push\nThen I can go to GitHub repository setting to enable GitHub pages."
+  },
+  {
+    "objectID": "getting-started.html",
+    "href": "getting-started.html",
+    "title": "1 Introduction to Bash coding",
+    "section": "",
+    "text": "1 Introduction to Bash coding\nBash is widely used shell on Linux systems. Most major Linux distributions include Bash as the default shell. It is also available on macOS and Windows (via WSL or Git Bash).\nThis is a simple example of a Bash script that prints “Hello, World!” to the console:\necho \"Hello, World!\"\nTo run this script, you can save it to a file named hello.sh, give it execute permissions using chmod +x hello.sh, and then execute it with ./hello.sh.\ncreate the file hello.sh and add the following content:\ntouch ./files/hello.sh\nnano ./files/hello.sh\n#!/bin/bash\necho \"Hello, World!\"\nfor saving in nano, press CTRL + X, then Y, and then ENTER.\nMake the script executable:\nchmod +x ./files/hello.sh\nRun the script:\n./files/hello.sh\n# Output: Hello, World!\nThis will output “Hello, World!” to the console."
   },
   {
     "objectID": "index.html",
@@ -12,5 +19,12 @@
     "title": "Bash Introduction",
     "section": "",
     "text": "In This Website you will find a series of tutorials and examples to learn Bash scripting. by default. It is also available on macOS and Windows (via WSL or Git Bash). Bash is a powerful tool for automating tasks, managing system operations, and creating scripts to streamline workflows.\nHere is the list of tutorials available:\n\nGetting Started with Bash"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am Javad Vahdat Atashgah and this is my linked-in profile:\n\n\n\nLinkedIn"
   }
 ]
