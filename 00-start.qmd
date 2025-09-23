@@ -1,0 +1,11 @@
+quarto generate project website:
+
+```Bash
+quarto create project Website
+```
+initialize git repository:
+
+```Bash
+git init
+```
+

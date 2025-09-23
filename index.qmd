@@ -7,4 +7,4 @@ Bash is a powerful tool for automating tasks, managing system operations, and cr
 
 Here is the list of tutorials available:
 
-- [Getting Started with Bash](docs/getting-started.qmd)
+- [Getting Started with Bash](getting-started.qmd)

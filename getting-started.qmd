@@ -1,0 +1,9 @@
+# Introduction to Bash coding
+
+Bash is widely used shell on Linux systems. Most major Linux distributions include Bash as the default shell. It is also available on macOS and Windows (via WSL or Git Bash).
+
+This is a simple example of a Bash script that prints "Hello, World!" to the console:
+
+``` bash
+echo "Hello, World!"
+```
