@@ -142,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./getting-started.html">Getting Started</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/getting-started.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./getting-started.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Getting Started</span></a>
   </div>
 </li>
@@ -179,13 +179,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/session1.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./session1.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">title1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/variables.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./variables.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">title2</span></a>
   </div>
 </li>
@@ -201,7 +201,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-bash-coding" id="toc-introduction-to-bash-coding" class="nav-link active" data-scroll-target="#introduction-to-bash-coding"><span class="header-section-number">1</span> Introduction to Bash coding</a></li>
+  <li><a href="#introduction-to-bash-coding" id="toc-introduction-to-bash-coding" class="nav-link active" data-scroll-target="#introduction-to-bash-coding"><span class="header-section-number">1</span> Introduction to Bash coding</a>
+  <ul class="collapse">
+  <li><a href="#what-is-bash" id="toc-what-is-bash" class="nav-link" data-scroll-target="#what-is-bash"><span class="header-section-number">1.1</span> What is Bash?</a></li>
+  <li><a href="#pipes-and-redirection" id="toc-pipes-and-redirection" class="nav-link" data-scroll-target="#pipes-and-redirection"><span class="header-section-number">1.2</span> Pipes and redirection</a></li>
+  <li><a href="#bash-builtin-and-other-commands" id="toc-bash-builtin-and-other-commands" class="nav-link" data-scroll-target="#bash-builtin-and-other-commands"><span class="header-section-number">1.3</span> Bash builtin and other commands</a></li>
+  <li><a href="#brackets-and-braces-in-bash" id="toc-brackets-and-braces-in-bash" class="nav-link" data-scroll-target="#brackets-and-braces-in-bash"><span class="header-section-number">1.4</span> Brackets and braces in Bash</a></li>
+  <li><a href="#bash-expansions-and-substitutions" id="toc-bash-expansions-and-substitutions" class="nav-link" data-scroll-target="#bash-expansions-and-substitutions"><span class="header-section-number">1.5</span> Bash expansions and substitutions</a>
+  <ul class="collapse">
+  <li><a href="#brace-expansion" id="toc-brace-expansion" class="nav-link" data-scroll-target="#brace-expansion"><span class="header-section-number">1.5.1</span> Brace expansion <code>{}</code></a></li>
+  <li><a href="#parameter-expansion" id="toc-parameter-expansion" class="nav-link" data-scroll-target="#parameter-expansion"><span class="header-section-number">1.5.2</span> Parameter expansion <code>${}</code></a></li>
+  <li><a href="#command-substitution-..." id="toc-command-substitution-..." class="nav-link" data-scroll-target="#command-substitution-..."><span class="header-section-number">1.5.3</span> Command substitution <code>$(...)</code></a></li>
+  <li><a href="#arithmetic-expansion-..." id="toc-arithmetic-expansion-..." class="nav-link" data-scroll-target="#arithmetic-expansion-..."><span class="header-section-number">1.5.4</span> Arithmetic expansion <code>$((...))</code></a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -229,8 +242,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./files/hello.sh</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Hello, World!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will output “Hello, World!” to the console.</p>
+<section id="what-is-bash" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="what-is-bash"><span class="header-section-number">1.1</span> What is Bash?</h2>
+<p>Bash (Bourne Again SHell) is a command-line interpreter that allows users to interact with the operating system by executing commands and running scripts. It is widely used for system administration, automation, and programming tasks.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the version of Bash</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For checking your default shell, you can use the following command:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>One of the other variables in the environment is <code>PATH</code>, which lists directories that the shell searches for executable files. You can view it with:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="pipes-and-redirection" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="pipes-and-redirection"><span class="header-section-number">1.2</span> Pipes and redirection</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ./files/ExerciseFiles</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> lorem.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For clear the screen:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For scrolling the output we can pass it to <code>less</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> lorem.txt <span class="kw">|</span> <span class="fu">less</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and for exiting <code>less</code>, press <code>q</code>.</p>
+<p>Now we can count the number of lines and words in the file using <code>wc</code> (word count):</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> lorem.txt <span class="kw">|</span> <span class="fu">wc</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output:  45    1853   12577</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This output indicates that the file contains 45 lines, 1853 words, and 12577 characters. Also we can use <code>wc -l</code> to count only the number of lines:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> lorem.txt <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>redirection of output to a file using <code>&gt;</code>:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> lorem.txt <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="op">&gt;</span> line_count.txt</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> line_count.txt</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command counts the number of lines in <code>lorem.txt</code> and writes the result to <code>line_count.txt</code>. If <code>line_count.txt</code> already exists, it will be overwritten.</p>
+<p>we have different options for redirection: - <code>&gt;</code>: Redirects output to a file, overwriting the file if it exists. - <code>&gt;&gt;</code>: Redirects output to a file, appending to the file if it exists. - <code>2&gt;</code>: Redirects standard error (stderr) to a file. - <code>&amp;&gt;</code>: Redirects both standard output (stdout) and standard error (stderr) to a file. In Bash, there are three standard streams: - Standard input (stdin): Stream 0 - Standard output (stdout): Stream 1 - Standard error (stderr): Stream 2 Here are some examples of using redirection:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ./files/ExerciseFiles <span class="op">&gt;</span> ./files/output.txt</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ./files/output.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ./notexist <span class="dv">1</span><span class="op">&gt;</span> ./files/output.txt <span class="dv">2</span><span class="op">&gt;</span> ./files/error.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Because the directory <code>./notexist</code> does not exist, the error message will be written to <code>error.txt</code>. and nothing will be written to <code>output.txt</code>.</p>
+<p>‘&lt;’ is used for input redirection, allowing a command to read input from a file instead of standard input. For example:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="op">&lt;</span> ./files/lorem.txt</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>‘&lt;&lt;’ is used for here-document, allowing you to provide input directly within the script. For example:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-w</span> <span class="op">&lt;&lt; EOF</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="st">This is a sample text</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="st">with multiple lines.</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bash-builtin-and-other-commands" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="bash-builtin-and-other-commands"><span class="header-section-number">1.3</span> Bash builtin and other commands</h2>
+<p><code>echo</code> is a built-in command in Bash that outputs the strings it is given as arguments. It is commonly used to display messages or the values of variables. For example:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, World!"</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Hello, World!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>printf</code> is another built-in command in Bash that provides more control over the formatting of the output compared to <code>echo</code>. It allows you to specify format specifiers for different data types. For example:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">printf</span> <span class="st">"Name: %s\nAge: %d\n"</span> <span class="st">"Alice"</span> 30</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output:</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Name: Alice</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Age: 30</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="brackets-and-braces-in-bash" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="brackets-and-braces-in-bash"><span class="header-section-number">1.4</span> Brackets and braces in Bash</h2>
+<p>In bash we have Parantheses <code>()</code> , Brackets <code>[]</code> and Braces <code>{}</code>. Parantheses <code>()</code> are often used for enclosiing conditions and for function parameters. Braces <code>{}</code> are used for function bodies and objects, and Brackets <code>[]</code> are used for lists or array notation.</p>
+</section>
+<section id="bash-expansions-and-substitutions" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="bash-expansions-and-substitutions"><span class="header-section-number">1.5</span> Bash expansions and substitutions</h2>
+<ol type="1">
+<li><code>~</code>: Tilde expansion, which represents the home directory of the current user. For example, <code>cd ~</code> will take you to your home directory.</li>
+<li><code>{...}</code>: <strong>Brace expansion</strong>, which generates a list of strings based on a pattern. For example, <code>echo file{1,2,3}.txt</code> will output <code>file1.txt file2.txt file3.txt</code>.</li>
+<li><code>${...}</code>: <strong>Parameter expansion</strong>, which allows you to access and manipulate the value of variables. For example, <code>name="Alice"; echo ${name}</code> will output <code>Alice</code>.</li>
+<li><code>$(...)</code>: <strong>Command substitution</strong>, which allows you to execute a command and use its output as part of another command. For example, <code>echo "Today is $(date)"</code> will output the current date.</li>
+<li><code>$((...))</code>: <strong>Arithmetic expansion</strong>, which allows you to perform arithmetic operations. For example, <code>echo $((3 + 5))</code> will output <code>8</code>.</li>
+</ol>
+<p>If i want to go back to my previous directory, I can use <code>cd -</code>:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="at">-</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: /home/username (or your previous directory)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="brace-expansion" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="brace-expansion"><span class="header-section-number">1.5.1</span> Brace expansion <code>{}</code></h3>
+<p>Sequence expressions using braces <code>{}</code>:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">5</span><span class="dt">}</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 1 2 3 4 5</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="dt">{</span>a<span class="dt">..</span>e<span class="dt">}</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: a b c d e</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">10</span><span class="dt">..</span><span class="dv">2</span><span class="dt">}</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 1 3 5 7 9</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="dt">{</span>a<span class="dt">..</span>z<span class="dt">..</span><span class="dv">3</span><span class="dt">}</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: a d g j m p s v y</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="dt">{</span>A<span class="dt">..</span>Z<span class="dt">..</span><span class="dv">4</span><span class="dt">}</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: A E I M Q U Y</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="dt">{</span><span class="dv">0</span><span class="dt">..</span><span class="dv">100</span><span class="dt">..</span><span class="dv">20</span><span class="dt">}</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 0 20 40 60 80 100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>creating diferent files using brace expansion:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> file<span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">5</span><span class="dt">}</span>.txt</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> file<span class="pp">*</span>.txt</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: file1.txt file2.txt file3.txt file4.txt file5.txt</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> file<span class="pp">*</span>.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> file_<span class="dt">{</span>a<span class="dt">..</span>e<span class="dt">}{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}</span>.txt</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> file_<span class="pp">*</span>.txt</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: file_a1.txt file_a2.txt file_a3.txt file_b1.txt file_b2.txt file_b3.txt file_c1.txt file_c2.txt file_c3.txt file_d1.txt file_d2.txt file_d3.txt file_e1.txt file_e2.txt file_e3.txt</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> file_<span class="pp">*</span>.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>creating directories using brace expansion:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> dir<span class="dt">{</span>A<span class="dt">..</span>E<span class="dt">}</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-d</span> dir<span class="pp">*</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: dirA dirB dirC dirD dirE</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> dir<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="parameter-expansion" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="parameter-expansion"><span class="header-section-number">1.5.2</span> Parameter expansion <code>${}</code></h3>
+<p>Setting and accessing variables:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="va">name</span><span class="op">=</span><span class="st">"Alice"</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, </span><span class="va">${name}</span><span class="st">!"</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Hello, Alice!</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, </span><span class="va">${name</span><span class="op">:</span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span><span class="va">}</span><span class="st">!"</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Hello, Ali!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>** Bash is sensitive to spaces around the <code>=</code> sign when assigning variables. For example, <code>name = "Alice"</code> will result in an error, while <code>name="Alice"</code> is correct. **</p>
+<p>Substring extraction using parameter expansion:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="va">greeting</span><span class="op">=</span><span class="st">"Hello there!"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">${greeting</span><span class="op">:</span><span class="dv">6</span><span class="va">}</span><span class="st">"</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: there!</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># starting from index 6 to the end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">${greeting</span><span class="op">:</span><span class="dv">0</span><span class="op">:</span><span class="dv">5</span><span class="va">}</span><span class="st">"</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Hello</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># starting from index 0 and taking 5 characters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>replacing substrings using parameter expansion:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="va">text</span><span class="op">=</span><span class="st">"The quick brown fox"</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">${text</span><span class="op">/</span><span class="ss">quick</span><span class="op">/</span>slow<span class="va">}</span><span class="st">"</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The slow brown fox</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># replace the first occurrence of "quick" with "slow"</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">${text</span><span class="op">//</span><span class="ss">o</span><span class="op">/</span>O<span class="va">}</span><span class="st">"</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The quick brOwn fOx</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># replace all occurrences of "o" with "O" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="command-substitution-..." class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="command-substitution-..."><span class="header-section-number">1.5.3</span> Command substitution <code>$(...)</code></h3>
+<p>Using command substitution to capture the output of a command:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="va">current_date</span><span class="op">=</span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Today's date is: </span><span class="va">$current_date</span><span class="st">"</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Today's date is: Mon Jun 10 12:34:56 UTC 2024 (example output)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The python version is: </span><span class="va">$(</span><span class="ex">python3</span> <span class="at">--version</span><span class="va">)</span><span class="st">"</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The python version is: Python 3.x.x (example output)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="arithmetic-expansion-..." class="level3" data-number="1.5.4">
+<h3 data-number="1.5.4" class="anchored" data-anchor-id="arithmetic-expansion-..."><span class="header-section-number">1.5.4</span> Arithmetic expansion <code>$((...))</code></h3>
+<p>Performing arithmetic operations using arithmetic expansion:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="va">a</span><span class="op">=</span>5</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="va">b</span><span class="op">=</span>3</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="va">sum</span><span class="op">=</span><span class="va">$((a</span> <span class="op">+</span> <span class="va">b))</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The sum of </span><span class="va">$a</span><span class="st"> and </span><span class="va">$b</span><span class="st"> is: </span><span class="va">$sum</span><span class="st">"</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The sum of 5 and 3 is: 8</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="va">difference</span><span class="op">=</span><span class="va">$((a</span> <span class="op">-</span> <span class="va">b))</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The difference of </span><span class="va">$a</span><span class="st"> and </span><span class="va">$b</span><span class="st"> is: </span><span class="va">$difference</span><span class="st">"</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The difference of 5 and 3 is: 2</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="va">product</span><span class="op">=</span><span class="va">$((a</span> <span class="op">*</span> <span class="va">b))</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The product of </span><span class="va">$a</span><span class="st"> and </span><span class="va">$b</span><span class="st"> is: </span><span class="va">$product</span><span class="st">"</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The product of 5 and 3 is: 15</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="va">quotient</span><span class="op">=</span><span class="va">$((a</span> <span class="op">/</span> <span class="va">b))</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The quotient of </span><span class="va">$a</span><span class="st"> and </span><span class="va">$b</span><span class="st"> is: </span><span class="va">$quotient</span><span class="st">"</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The quotient of 5 and 3 is: 1</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="va">remainder</span><span class="op">=</span><span class="va">$((a</span> <span class="op">%</span> <span class="va">b))</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The remainder of </span><span class="va">$a</span><span class="st"> divided by </span><span class="va">$b</span><span class="st"> is: </span><span class="va">$remainder</span><span class="st">"</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The remainder of 5 divided by 3 is: 2</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="va">exponentiation</span><span class="op">=</span><span class="va">$((a</span> <span class="op">**</span> <span class="va">b))</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"The result of </span><span class="va">$a</span><span class="st"> raised to the power of </span><span class="va">$b</span><span class="st"> is: </span><span class="va">$exponentiation</span><span class="st">"</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: The result of 5 raised to the power of 3 is: 125</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

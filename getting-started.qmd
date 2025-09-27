@@ -38,3 +38,249 @@ Run the script:
 ```
 
 This will output "Hello, World!" to the console.
+
+## What is Bash?
+
+Bash (Bourne Again SHell) is a command-line interpreter that allows users to interact with the operating system by executing commands and running scripts. It is widely used for system administration, automation, and programming tasks.
+
+``` bash
+# Check the version of Bash
+bash --version
+```
+
+For checking your default shell, you can use the following command:
+
+``` bash
+echo $SHELL
+```
+
+One of the other variables in the environment is `PATH`, which lists directories that the shell searches for executable files. You can view it with:
+
+``` bash
+echo $PATH
+```
+
+## Pipes and redirection
+
+``` bash
+cd ./files/ExerciseFiles
+cat lorem.txt
+```
+
+For clear the screen:
+
+``` bash
+clear
+```
+
+For scrolling the output we can pass it to `less`:
+
+``` bash
+cat lorem.txt | less
+```
+
+and for exiting `less`, press `q`.
+
+Now we can count the number of lines and words in the file using `wc` (word count):
+
+``` bash
+cat lorem.txt | wc
+# Output:  45    1853   12577
+```
+
+This output indicates that the file contains 45 lines, 1853 words, and 12577 characters. Also we can use `wc -l` to count only the number of lines:
+
+``` bash
+cat lorem.txt | wc -l
+# Output: 45
+```
+
+redirection of output to a file using `>`:
+
+``` bash
+cat lorem.txt | wc -l > line_count.txt
+cat line_count.txt
+# Output: 45
+```
+
+This command counts the number of lines in `lorem.txt` and writes the result to `line_count.txt`. If `line_count.txt` already exists, it will be overwritten.
+
+we have different options for redirection: - `>`: Redirects output to a file, overwriting the file if it exists. - `>>`: Redirects output to a file, appending to the file if it exists. - `2>`: Redirects standard error (stderr) to a file. - `&>`: Redirects both standard output (stdout) and standard error (stderr) to a file. In Bash, there are three standard streams: - Standard input (stdin): Stream 0 - Standard output (stdout): Stream 1 - Standard error (stderr): Stream 2 Here are some examples of using redirection:
+
+``` bash
+ls ./files/ExerciseFiles > ./files/output.txt
+cat ./files/output.txt
+```
+
+``` bash
+ls ./notexist 1> ./files/output.txt 2> ./files/error.txt
+```
+
+Because the directory `./notexist` does not exist, the error message will be written to `error.txt`. and nothing will be written to `output.txt`.
+
+'\<' is used for input redirection, allowing a command to read input from a file instead of standard input. For example:
+
+``` bash
+wc -l < ./files/lorem.txt
+# Output: 45
+```
+
+'\<\<' is used for here-document, allowing you to provide input directly within the script. For example:
+
+``` bash
+wc -w << EOF
+This is a sample text
+with multiple lines.
+EOF
+# Output: 7
+```
+
+## Bash builtin and other commands
+
+`echo` is a built-in command in Bash that outputs the strings it is given as arguments. It is commonly used to display messages or the values of variables. For example:
+``` bash
+echo "Hello, World!"
+# Output: Hello, World!
+```
+`printf` is another built-in command in Bash that provides more control over the formatting of the output compared to `echo`. It allows you to specify format specifiers for different data types. For example:
+``` bash
+printf "Name: %s\nAge: %d\n" "Alice" 30
+# Output:
+# Name: Alice
+# Age: 30
+```
+
+## Brackets and braces in Bash
+
+In bash we have Parantheses `()` , Brackets `[]` and Braces `{}`.
+Parantheses `()` are often used for enclosiing conditions and for function parameters. Braces `{}` are used for function bodies and objects, and Brackets `[]` are used for lists or array notation.
+
+## Bash expansions and substitutions
+
+1. `~`: Tilde expansion, which represents the home directory of the current user. For example, `cd ~` will take you to your home directory.
+2. `{...}`: **Brace expansion**, which generates a list of strings based on a pattern. For example, `echo file{1,2,3}.txt` will output `file1.txt file2.txt file3.txt`.
+3. `${...}`: **Parameter expansion**, which allows you to access and manipulate the value of variables. For example, `name="Alice"; echo ${name}` will output `Alice`.
+4. `$(...)`: **Command substitution**, which allows you to execute a command and use its output as part of another command. For example, `echo "Today is $(date)"` will output the current date.
+5. `$((...))`: **Arithmetic expansion**, which allows you to perform arithmetic operations. For example, `echo $((3 + 5))` will output `8`.
+
+If i want to go back to my previous directory, I can use `cd -`:
+``` bash
+cd /tmp
+cd -
+# Output: /home/username (or your previous directory)
+```
+### Brace expansion `{}`
+Sequence expressions using braces `{}`:
+``` bash
+echo {1..5}
+# Output: 1 2 3 4 5
+echo {a..e}
+# Output: a b c d e
+echo {1..10..2}
+# Output: 1 3 5 7 9
+echo {a..z..3}
+# Output: a d g j m p s v y
+echo {A..Z..4}
+# Output: A E I M Q U Y
+echo {0..100..20}
+# Output: 0 20 40 60 80 100
+```
+
+creating diferent files using brace expansion:
+``` bash
+touch file{1..5}.txt
+ls file*.txt
+# Output: file1.txt file2.txt file3.txt file4.txt file5.txt
+rm file*.txt
+```
+```bash
+touch file_{a..e}{1..3}.txt
+ls file_*.txt
+# Output: file_a1.txt file_a2.txt file_a3.txt file_b1.txt file_b2.txt file_b3.txt file_c1.txt file_c2.txt file_c3.txt file_d1.txt file_d2.txt file_d3.txt file_e1.txt file_e2.txt file_e3.txt
+rm file_*.txt
+```
+
+creating directories using brace expansion:
+``` bash
+mkdir dir{A..E}
+ls -d dir*
+# Output: dirA dirB dirC dirD dirE
+rm -r dir*
+```
+
+### Parameter expansion `${}`
+
+Setting and accessing variables:
+``` bash
+name="Alice"
+echo "Hello, ${name}!"
+# Output: Hello, Alice!
+
+echo "Hello, ${name:0:3}!"
+# Output: Hello, Ali!
+```
+** Bash is sensitive to spaces around the `=` sign when assigning variables. For example, `name = "Alice"` will result in an error, while `name="Alice"` is correct. **
+
+Substring extraction using parameter expansion:
+```bash
+greeting="Hello there!"
+echo "${greeting:6}"
+# Output: there!
+# starting from index 6 to the end
+```
+
+```bash
+echo "${greeting:0:5}"
+# Output: Hello
+# starting from index 0 and taking 5 characters
+```
+
+replacing substrings using parameter expansion:
+``` bash
+text="The quick brown fox"
+echo "${text/quick/slow}"
+# Output: The slow brown fox
+# replace the first occurrence of "quick" with "slow"
+echo "${text//o/O}"
+# Output: The quick brOwn fOx
+# replace all occurrences of "o" with "O" 
+```
+
+### Command substitution `$(...)`
+
+Using command substitution to capture the output of a command:
+``` bash
+current_date=$(date)
+echo "Today's date is: $current_date"
+# Output: Today's date is: Mon Jun 10 12:34:56 UTC 2024 (example output)
+```
+``` bash
+echo "The python version is: $(python3 --version)"
+# Output: The python version is: Python 3.x.x (example output)
+```
+
+### Arithmetic expansion `$((...))`
+Performing arithmetic operations using arithmetic expansion:
+``` bash
+a=5
+b=3
+sum=$((a + b))
+echo "The sum of $a and $b is: $sum"
+# Output: The sum of 5 and 3 is: 8
+difference=$((a - b))
+echo "The difference of $a and $b is: $difference"
+# Output: The difference of 5 and 3 is: 2
+product=$((a * b))
+echo "The product of $a and $b is: $product"
+# Output: The product of 5 and 3 is: 15
+quotient=$((a / b))
+echo "The quotient of $a and $b is: $quotient"
+# Output: The quotient of 5 and 3 is: 1
+remainder=$((a % b))
+echo "The remainder of $a divided by $b is: $remainder"
+# Output: The remainder of 5 divided by 3 is: 2
+exponentiation=$((a ** b))
+echo "The result of $a raised to the power of $b is: $exponentiation"
+# Output: The result of 5 raised to the power of 3 is: 125
+```
+

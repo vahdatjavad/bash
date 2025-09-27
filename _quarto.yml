@@ -16,12 +16,12 @@ website:
    colapse-level: 2 
    contents:
      - text: "Getting Started"
-       href: docs/getting-started.qmd
+       href: getting-started.qmd
      - section: "section 1"
        contents:
-        - href: docs/session1.qmd
+        - href: session1.qmd
           text: "title1"
-        - href: docs/variables.qmd
+        - href: variables.qmd
           text: "title2"
     
 
