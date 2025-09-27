@@ -1,0 +1,6 @@
+Course Notes.md
+Solutions
+dir1
+dir2
+dir3
+lorem.txt
